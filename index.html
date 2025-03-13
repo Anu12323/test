@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosting Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .success-message {
+            background-color: #dff0d8;
+            color: #3c763d;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        .info {
+            background-color: #d9edf7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        .current-time {
+            font-size: 18px;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hosting Test Page</h1>
+        
+        <div class="success-message">
+            ✅ If you can see this page, your hosting is working correctly!
+        </div>
+        
+        <div class="current-time">
+            Current Time: <span id="current-time"></span>
+        </div>
+        
+        <div class="info">
+            <h3>Server Information:</h3>
+            <ul>
+                <li>HTML is rendering correctly</li>
+                <li>CSS styling is working</li>
+                <li>JavaScript is functioning (see the time above)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update the current time
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('current-time').textContent = now.toLocaleString();
+        }
+        
+        // Update time immediately and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
